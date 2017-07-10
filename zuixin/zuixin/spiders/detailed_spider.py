@@ -30,4 +30,4 @@ class DetailedSpider(Spider):
                     'title': site.xpath('text()').extract(),
                     'sign': urlm.split('/')[-2]
                 }
-                # detailed.insert_one(data)
+                detailed.insert_one(data)

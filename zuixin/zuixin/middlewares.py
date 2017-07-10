@@ -7,14 +7,14 @@
 
 from scrapy import signals
 import random
-from  zuixin.settings import IPPOOL
-
+from zuixin.settings import IPPOOL
+# 这是中间件的改变
 class MyProxiesSpiderMiddlewares(object):
 
-    def __init__(self, ip = ''):
+    def __init__(self, ip=''):
         self.ip = ip
 
-    def process_request(self, request, spider):
+    def process_request(self, request,spider):
         thisip = random.choice(IPPOOL)
         print("this is ip:"+thisip['ipaddr'])
         request.meta["proxy"] = "http://" + thisip['ipaddr']

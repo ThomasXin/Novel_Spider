@@ -35,6 +35,6 @@ class DmozSpider(Spider):
                        'sign': sign[-2]
                    }
                    #  将数据保存到库中
-                   # urls.insert_one(data)
+                   urls.insert_one(data)
                else:
                    pass
