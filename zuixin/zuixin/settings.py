@@ -13,11 +13,12 @@ BOT_NAME = 'zuixin'
 
 SPIDER_MODULES = ['zuixin.spiders']
 NEWSPIDER_MODULE = 'zuixin.spiders'
-
+# 这是一个ip代理池
 IPPOOL = [
     {"ipaddr":"121.61.17.36:8118"}
 
 ]
+# 这是基本设置
 DOWNLOADER_MIDDLEWARES = {
 #    'myproxies.middlewares.MyCustomDownloaderMiddleware': 543,
      'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 543,
