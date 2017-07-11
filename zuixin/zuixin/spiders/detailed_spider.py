@@ -2,13 +2,13 @@
 
 from scrapy.spider import Spider
 from scrapy.selector import  Selector
-import pymongo
+from db import urls, detailed
 import time
 
-client = pymongo.MongoClient('localhost', 27017)
-quanshu = client['quanshu']
-detailed = quanshu['detailed']
-urls = quanshu['urls']
+# client = pymongo.MongoClient('localhost', 27017)
+# quanshu = client['quanshu']
+# detailed = quanshu['detailed']
+# urls = quanshu['urls']
 
 class DetailedSpider(Spider):
     name = 'detailed'

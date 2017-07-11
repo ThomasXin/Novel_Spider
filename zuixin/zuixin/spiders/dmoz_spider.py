@@ -1,10 +1,7 @@
 # -*- coding:utf-8 -*-
 from scrapy.spider import Spider
 from scrapy.selector import Selector
-import pymongo
-client = pymongo.MongoClient('localhost', 27017)
-quanshu = client['quanshu']
-urls = quanshu['urls']
+from db import urls
 class DmozSpider(Spider):
     # 这是爬虫的名字（必须唯一）
     name = 'dmoz11'
