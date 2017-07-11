@@ -8,6 +8,8 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+from spiders.db import ip_list
+
 
 BOT_NAME = 'zuixin'
 
@@ -15,9 +17,12 @@ SPIDER_MODULES = ['zuixin.spiders']
 NEWSPIDER_MODULE = 'zuixin.spiders'
 # 这是一个ip代理池
 IPPOOL = [
-    {"ipaddr":"121.61.17.36:8118"}
+    # {"ipaddr":"121.61.17.36:8118"}
 
 ]
+for ip in ip_list.find():
+    IPPOOL.append({"ipaddr": ip['ipaddr']})
+   #  print(ip['ipaddr'])
 # 这是基本设置
 DOWNLOADER_MIDDLEWARES = {
 #    'myproxies.middlewares.MyCustomDownloaderMiddleware': 543,
